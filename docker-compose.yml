@@ -1,0 +1,14 @@
+version: '3'
+services:
+ react-template:
+   image: react-template
+   build:
+    context: ./
+    dockerfile: Dockerfile
+   container_name: react-template-1
+   ports:
+    - 3000:3000
+   volumes:
+    - ./:/react-template
+   command: ["/bin/bash","/react-template/startFrontEnd.sh"]
+   tty: true
